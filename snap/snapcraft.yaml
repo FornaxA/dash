@@ -1,7 +1,7 @@
 # Copyright (c) 2018-2020 The Ion developers
 name: ioncore
 base: core18
-version: 5.0.99
+version: 5.0.00
 summary:   gaming related peer-to-peer network based digital currency
 description: |
   Ion Core is an MIT licensed,  open source, gaming oriented,
@@ -53,7 +53,7 @@ description: |
   - Testing Report: https://tinyurl.com/y39n2hsv
 
   Warning: Please do not use shady snapcraft's shady forum for questions
-grade: devel
+grade: stable
 confinement: strict
 icon: src/qt/res/src/ion.svg
 apps:
@@ -124,7 +124,7 @@ parts:
   ion:
     source: https://github.com/ioncoincore/ion
     source-type: git
-    source-tag: master
+    source-tag: v5.0.00
     plugin: nil
     override-build: |
       echo "+++++++++++++++++++++++++++++++++++++++++++++++"
@@ -137,7 +137,7 @@ parts:
       OVERRIDEBINPREFIX="ion"
       OVERRIDEDATADIR="ioncoin"
       OVERRIDECONF="${OVERRIDEDATADIR}"
-      JOBS=4
+      JOBS=6
       echo "-----------------------------------------------"
       echo "+++++++++++++++++++++++++++++++++++++++++++++++"
       echo "SET OVERRIDE VARIABLES IF SET" # checks OVERRIDEBINPREFIX, OVERRIDEDATADIR and OVERRIDECONF
@@ -292,6 +292,7 @@ parts:
       - shared-mime-info
       - libqt5gui5
       - libgdk-pixbuf2.0-0
+      - libgtk2.0-0
       - libqt5svg5 # for loading icon themes which are svg
       - locales-all
       - qtwayland5
