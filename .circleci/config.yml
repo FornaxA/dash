@@ -109,7 +109,7 @@ jobs:
             test/functional/test_runner.py
   x86_64_focal_depends:
     docker:
-      - image: circleci/buildpack-deps:focal
+      - image: cimg/base:stable-20.04
         user: root
     environment:
       HOST: x86_64-linux-gnu
@@ -142,7 +142,7 @@ jobs:
             - /root/project/depends/work
   x86_64_focal:
     docker:
-      - image: circleci/buildpack-deps:focal
+      - image: cimg/base:stable-20.04
         user: root
     environment:
       HOST: x86_64-linux-gnu
